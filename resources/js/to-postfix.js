@@ -1,0 +1,16 @@
+
+const toPostfix = () => {
+  
+  
+  function operatorPriority() {
+
+    
+
+  }
+
+}
+
+
+
+
+

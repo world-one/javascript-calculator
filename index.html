@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>계산기</title>
+  <link rel="stylesheet" href="./resources/css/style.css">
+</head>
+<body>
+  <div class="wrap__calculator">
+    <!-- <input type="text" placeholder="0" class="input__result" id="js-input" readonly> -->
+    <textarea placeholder="0" readonly class="input__result" id="js-input"></textarea>
+    <div class="wrap__keypad" id="js-keypad">
+
+      <div class="keypad">
+        <button type="button" class="keypad__btn keypad__number"
+          data-keypad-type="number" 
+          data-value=1 >1</button>
+        <button type="button" class="keypad__btn keypad__number"
+          data-keypad-type="number" 
+          data-value=2 >2</button>
+        <button type="button" class="keypad__btn keypad__number"
+          data-keypad-type="number" 
+          data-value=3 >3</button>
+        <button type="button" class="keypad__btn keypad__number"
+          data-keypad-type="number" 
+          data-value=4 >4</button>
+        <button type="button" class="keypad__btn keypad__number"
+          data-keypad-type="number" 
+          data-value=5 >5</button>
+        <button type="button" class="keypad__btn keypad__number"
+          data-keypad-type="number" 
+          data-value=6 >6</button>
+        <button type="button" class="keypad__btn keypad__number"
+          data-keypad-type="number" 
+          data-value=7 >7</button>
+        <button type="button" class="keypad__btn keypad__number"
+          data-keypad-type="number" 
+          data-value=8 >8</button>
+        <button type="button" class="keypad__btn keypad__number"
+          data-keypad-type="number" 
+          data-value=9 >9</button>
+        <button type="button" class="keypad__btn keypad__number"
+          data-keypad-type="number" 
+          data-value=0 >0</button>
+        <button type="button" class="keypad__btn keypad__number"
+          data-keypad-type="dot" 
+          data-value=. >.</button>
+        <button type="button" class="keypad__btn keypad__number"
+          data-keypad-type="result" 
+          data-value='=' >=</button>
+        <button type="button" class="keypad__btn keypad__number"
+          data-keypad-type="clear" 
+          data-value=0 >AC</button>
+        <button type="button" class="keypad__btn keypad__number"
+          data-keypad-type="clear" 
+          data-value=1 >CE</button>
+      </div>
+  
+      <div class="keypad operator">
+        <button type="button" class="keypad__btn operator__btn"
+          data-keypad-type="operator" 
+          data-value='+'>+</button>
+        <button type="button" class="keypad__btn operator__btn"
+          data-keypad-type="operator" 
+          data-value='-'>-</button>
+        <button type="button" class="keypad__btn operator__btn"
+          data-keypad-type="operator" 
+          data-value='*'>*</button>
+        <button type="button" class="keypad__btn operator__btn"
+          data-keypad-type="operator" 
+          data-value='/'>/</button>
+      </div>
+
+    </div> <!-- //end .wrap__keypad -->
+  
+  </div> <!-- //end .wrap__calculator -->
+  <script src="./resources/js/script.js">
+    
+  </script>
+</body>
+</html>
