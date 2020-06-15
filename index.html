@@ -9,10 +9,9 @@
 </head>
 <body>
   <div class="wrap__calculator">
-    <!-- <input type="text" placeholder="0" class="input__result" id="js-input" readonly> -->
-    <textarea placeholder="0" readonly class="input__result" id="js-input"></textarea>
+    <textarea class="input__data input__data__process" id="js-process" placeholder="0" readonly ></textarea>
+    <input class="input__data input__data__result" id="js-result" type="text" placeholder="0" readonly>
     <div class="wrap__keypad" id="js-keypad">
-
       <div class="keypad">
         <button type="button" class="keypad__btn keypad__number"
           data-keypad-type="number" 
@@ -46,31 +45,38 @@
           data-value=0 >0</button>
         <button type="button" class="keypad__btn keypad__number"
           data-keypad-type="dot" 
-          data-value=. >.</button>
+          data-value="." >.</button>
         <button type="button" class="keypad__btn keypad__number"
-          data-keypad-type="result" 
-          data-value='=' >=</button>
+          data-keypad-type="calculation" 
+          data-value="=" >=</button>
         <button type="button" class="keypad__btn keypad__number"
-          data-keypad-type="clear" 
-          data-value=0 >AC</button>
+          data-keypad-type="bracket" 
+          data-value="(" >()</button>  
         <button type="button" class="keypad__btn keypad__number"
           data-keypad-type="clear" 
           data-value=1 >CE</button>
+        <button type="button" class="keypad__btn keypad__number"
+          data-keypad-type="clear" 
+          data-value=0 >AC</button>
+        
       </div>
   
       <div class="keypad operator">
         <button type="button" class="keypad__btn operator__btn"
           data-keypad-type="operator" 
-          data-value='+'>+</button>
+          data-value="+">+</button>
         <button type="button" class="keypad__btn operator__btn"
           data-keypad-type="operator" 
-          data-value='-'>-</button>
+          data-value="-">-</button>
         <button type="button" class="keypad__btn operator__btn"
           data-keypad-type="operator" 
-          data-value='*'>*</button>
+          data-value="*">*</button>
         <button type="button" class="keypad__btn operator__btn"
           data-keypad-type="operator" 
-          data-value='/'>/</button>
+          data-value="/">/</button>
+        <button type="button" class="keypad__btn operator__btn"
+          data-keypad-type="operator" 
+          data-value="%">%</button>
       </div>
 
     </div> <!-- //end .wrap__keypad -->

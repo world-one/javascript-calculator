@@ -6,17 +6,22 @@ body{font-size: 16px;}
 li{list-style: none;}
 
 /*  */
-.input__result{
+.input__data{
+  width: 100%;
+  text-align: right;
+  font-size: 1.5rem;
+  padding: 8px 16px;
+}
+.input__data__process{
   max-width: 100%;
   min-width: 100%;
   height: 150px;
   min-height: 50px;
   max-height: 300px;
-  padding: 8px 16px;
   margin: 16px 0 8px;
-  text-align: right;
-  font-size: 1.5rem;
-  
+}
+.input__data__result{
+  height: 50px;
 }
 
 /* calculator */
