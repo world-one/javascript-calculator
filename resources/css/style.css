@@ -61,11 +61,11 @@ li{list-style: none;}
   display: block;
   padding-left: 8px;
 }
-.operator__btn{
+.keypad__operation{
   display: block;
   width: 100%;
   margin-bottom: 16px;
 }
-.operator__btn:last-child{
+.keypad__operation:last-child{
   margin-bottom: 0;
 }

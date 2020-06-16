@@ -8,81 +8,23 @@
   <link rel="stylesheet" href="./resources/css/style.css">
 </head>
 <body>
-  <div class="wrap__calculator">
+  <div class="wrap__calculator" id="js-calculator">
+    
     <textarea class="input__data input__data__process" id="js-process" placeholder="0" readonly ></textarea>
     <input class="input__data input__data__result" id="js-result" type="text" placeholder="0" readonly>
+    
     <div class="wrap__keypad" id="js-keypad">
-      <div class="keypad">
-        <button type="button" class="keypad__btn keypad__number"
-          data-keypad-type="number" 
-          data-value=1 >1</button>
-        <button type="button" class="keypad__btn keypad__number"
-          data-keypad-type="number" 
-          data-value=2 >2</button>
-        <button type="button" class="keypad__btn keypad__number"
-          data-keypad-type="number" 
-          data-value=3 >3</button>
-        <button type="button" class="keypad__btn keypad__number"
-          data-keypad-type="number" 
-          data-value=4 >4</button>
-        <button type="button" class="keypad__btn keypad__number"
-          data-keypad-type="number" 
-          data-value=5 >5</button>
-        <button type="button" class="keypad__btn keypad__number"
-          data-keypad-type="number" 
-          data-value=6 >6</button>
-        <button type="button" class="keypad__btn keypad__number"
-          data-keypad-type="number" 
-          data-value=7 >7</button>
-        <button type="button" class="keypad__btn keypad__number"
-          data-keypad-type="number" 
-          data-value=8 >8</button>
-        <button type="button" class="keypad__btn keypad__number"
-          data-keypad-type="number" 
-          data-value=9 >9</button>
-        <button type="button" class="keypad__btn keypad__number"
-          data-keypad-type="number" 
-          data-value=0 >0</button>
-        <button type="button" class="keypad__btn keypad__number"
-          data-keypad-type="dot" 
-          data-value="." >.</button>
-        <button type="button" class="keypad__btn keypad__number"
-          data-keypad-type="calculation" 
-          data-value="=" >=</button>
-        <button type="button" class="keypad__btn keypad__number"
-          data-keypad-type="bracket" 
-          data-value="(" >()</button>  
-        <button type="button" class="keypad__btn keypad__number"
-          data-keypad-type="clear" 
-          data-value=1 >CE</button>
-        <button type="button" class="keypad__btn keypad__number"
-          data-keypad-type="clear" 
-          data-value=0 >AC</button>
-        
-      </div>
-  
-      <div class="keypad operator">
-        <button type="button" class="keypad__btn operator__btn"
-          data-keypad-type="operator" 
-          data-value="+">+</button>
-        <button type="button" class="keypad__btn operator__btn"
-          data-keypad-type="operator" 
-          data-value="-">-</button>
-        <button type="button" class="keypad__btn operator__btn"
-          data-keypad-type="operator" 
-          data-value="*">*</button>
-        <button type="button" class="keypad__btn operator__btn"
-          data-keypad-type="operator" 
-          data-value="/">/</button>
-        <button type="button" class="keypad__btn operator__btn"
-          data-keypad-type="operator" 
-          data-value="%">%</button>
-      </div>
+      
+      <div class="keypad" id="js-keypad-btns"></div>
+      <div class="keypad operator" id="js-keypad-operators"></div>
 
     </div> <!-- //end .wrap__keypad -->
   
   </div> <!-- //end .wrap__calculator -->
-  <script src="./resources/js/script.js">
+
+  <script src="./resources/js/drawKeypad.js"></script>
+  <script src="./resources/js/stack.js"></script>
+  <script src="./resources/js/calculator.js">
     
   </script>
 </body>

@@ -1,7 +1,11 @@
 class Calculator{
   
+  TYPE_NUMBER = 'number';
   TYPE_OP = 'operator';
   TYPE_DOT = 'dot';
+  TYPE_BRACKET = 'bracket';
+  TYPE_CLEAR = 'clear';
+  TYPE_CALCULATION = 'calculation';
   
   constructor( targetElId, processElId, resultElId ){    
     this.keypadEl = document.getElementById(targetElId); 
@@ -9,6 +13,7 @@ class Calculator{
     this.resultEl = document.getElementById(resultElId);
     this.inputValueArr = [];
     this.inputTypeArr = [];
+    this.bracketStack = new Stack();
     this.init();
   }
 
@@ -22,23 +27,40 @@ class Calculator{
     if( btn.dataset.keypadType != undefined ){
       const btnType = btn.dataset.keypadType;
       const btnValue = btn.dataset.value;
-      this.clicked[btnType](btnValue, btnType);
+      if( this.checkBracket(btnType) ) // 괄호 내외부에서 타입 입력시 제한
+        this.clicked[btnType](btnValue, btnType);
     };
   }
   
   clicked = {
     number: (btnValue, btnType) => {
-      this.pushValueArr(btnValue, btnType);
+      const arrLen = this.inputValueArr.length;
+      let type;
+      let active = true;
+      for( let i = arrLen; i > -1; i-- ){
+        type = this.inputTypeArr[ i ];
+        if( type === this.TYPE_OP || type === this.TYPE_DOT ){
+          if ( this.inputValueArr[i] < 1 ) active = false;
+          break;
+        }
+        if ( i === 0 && this.inputValueArr[i] < 1 ) active = false;
+      }
+      if( active ) this.pushValueArr(btnValue, btnType);
     },
     operator: (btnValue, btnType) => {
-      if( this.getPrevType() !== this.TYPE_OP ){
+      if( this.getPrevType() && this.getPrevType() !== this.TYPE_OP ){
         this.pushValueArr(btnValue, btnType);
       }
     },
     bracket: (btnValue, btnType) => {
-      if( this.prevInputType && 
-        ( this.prevInputType !== this.TYPE_OP && this.prevInputType !== 'bracket' ) ){
+      if( this.getPrevType() === this.TYPE_NUMBER 
+          && this.bracketStack.store.length > 0 ){
           btnValue = ')';
+          this.bracketStack.pop();
+      }
+      if( btnValue === '(' ) {
+        if( this.getPrevType() === this.TYPE_NUMBER ) return;
+        this.bracketStack.push(btnValue);
       }
       this.pushValueArr(btnValue, btnType);
     },
@@ -49,22 +71,35 @@ class Calculator{
     },
     clear: (btnValue) => {
       if(btnValue > 0) {
-        this.inputValueArr.pop();
-        this.inputTypeArr.pop();
+        const value = this.inputValueArr.pop();
+        const type = this.inputTypeArr.pop();
+        if( type === this.TYPE_BRACKET ){
+          if( value === '(' ) this.bracketStack.pop();
+          if( value === ')' ) this.bracketStack.push('(');
+        }
       }else{
         this.inputValueArr = [];
         this.inputTypeArr = [];
+        this.bracketStack.reset()
       } 
       this.insertValueProcessEl();
     },
     calculation: () => {
       if( this.getPrevType() === this.OP ){
         this.inputValueArr.pop();
-        this.insertValueProcessEl();
       }
+      if(this.bracketStack.store.length > 0){
+        this.bracketStack.store.forEach((el)=>{
+          this.inputValueArr.push(')');
+        });
+        this.bracketStack.reset();
+      }
+      
+      this.insertValueProcessEl();
       this.resultEl.value = eval( this.processEl.value );
     },
   }
+
   pushValueArr(btnValue, btnType){
     this.inputValueArr.push(btnValue);
     this.inputTypeArr.push(btnType);
@@ -85,6 +120,18 @@ class Calculator{
       if( type === this.TYPE_OP || type === this.TYPE_DOT ) break;
     }
     return type;
+  }
+  checkBracket( btnType ){
+    const prevType = this.getPrevType();
+    if( btnType === this.TYPE_CALCULATION || btnType === this.TYPE_CLEAR ) return true;
+    if( prevType === this.TYPE_BRACKET ){
+      if ( this.inputValueArr[ this.inputValueArr.length - 1 ] === '(' ){
+        if( btnType === this.TYPE_OP ) return false;
+      }else{ // ')';
+        if( btnType !== this.TYPE_OP ) return false;
+      };
+    }
+    return true;
   }
 
 }
