@@ -39,7 +39,7 @@ class Calculator{
       let active = true;
       for( let i = arrLen; i > -1; i-- ){
         type = this.inputTypeArr[ i ];
-        if( type === this.TYPE_OP || type === this.TYPE_DOT ){
+        if( type === this.TYPE_OP || type === this.TYPE_DOT || type === this.TYPE_BRACKET ){
           if ( this.inputValueArr[i] < 1 ) active = false;
           break;
         }
@@ -65,9 +65,8 @@ class Calculator{
       this.pushValueArr(btnValue, btnType);
     },
     dot: (btnValue, btnType) => {
-      if(this.checkDot() !== this.TYPE_DOT ){
+      if(this.checkDot() !== this.TYPE_DOT )
         this.pushValueArr(btnValue, btnType);
-      };
     },
     clear: (btnValue) => {
       if(btnValue > 0) {
