@@ -14,8 +14,9 @@ class DrawKeypad{
     ];
     const operators = [ '+', '-', '*', '/', '%' ];
     
-    for( let i = 0; i < 10; i++){
-      this.createEl('button', i, 'number', i, 'js-keypad-btns');
+    for( let i = 1; i <= 10; i++){
+      let value =  i % 10;
+      this.createEl('button', value, 'number', value, 'js-keypad-btns');
     }
     utilities.forEach( el => {
       this.createEl('button', el.text, el.type, el.value, 'js-keypad-btns');
