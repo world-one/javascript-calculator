@@ -44,6 +44,7 @@ const onRequest = (request, response) => {
         }
     }
     else {
+        response.setHeader("Access-Control-Max-Age", "600");
         response.writeHead(200, { 'Content-Type': contentType });
         response.end(content, 'utf-8');
     }
