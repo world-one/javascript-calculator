@@ -1,13 +1,13 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const url = require('url');
 
 const onRequest = (request, response) => {
   console.log('request ', request.url);
-  let filePath = '.' + request.url;
+  let filePath = '.' + url.parse(request.url).pathname;
   if (filePath == './')
       filePath = './index.html';
-  
   let contentType = 'text/html';
   const extname = String(path.extname(filePath)).toLowerCase();
   const mimeTypes = {
@@ -28,7 +28,7 @@ const onRequest = (request, response) => {
   };
 
   contentType = mimeTypes[extname] || 'application/octet-stream';
-
+  
   fs.readFile(filePath, function(error, content) {
     if (error) {
         if(error.code == 'ENOENT'){
