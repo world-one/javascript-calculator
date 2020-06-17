@@ -5,6 +5,8 @@
 
 #### directory and files
 - index.html
+- app.js
+- server.js
 - resources
   - css
     - style.css
