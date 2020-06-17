@@ -1,6 +1,8 @@
 ### javascript calculator
 <https://world-one.github.io/javascript-calculator/>
 
+ - yarn start
+
 #### directory and files
 - index.html
 - resources

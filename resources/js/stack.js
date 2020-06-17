@@ -12,9 +12,8 @@ class Stack{
   pop(){
     return this.store.pop();
   }
-}
+};
 
 
-
-
+export default Stack;
 

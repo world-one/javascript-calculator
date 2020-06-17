@@ -1,7 +1,6 @@
 
 class DrawKeypad{
-  constructor(calculatorEl){
-    this.target = document.getElementById(calculatorEl);
+  constructor(){
     this.draw();
   }
   draw(){
@@ -37,5 +36,5 @@ class DrawKeypad{
   }
 }
 
-new DrawKeypad( 'js-calculator' );
+export default DrawKeypad;
 

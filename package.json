@@ -1,0 +1,11 @@
+{
+  "name": "js-calculator",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "https://github.com/world-one/javascript-calculator.git",
+  "author": "world-one <worldone.dev@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start" : "node ./server.js"
+  }
+}

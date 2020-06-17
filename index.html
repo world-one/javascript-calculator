@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>계산기</title>
-  <link rel="stylesheet" href="./resources/css/style.css?date=20200617">
+  <link rel="stylesheet" href="./resources/css/style.css">
 </head>
 <body>
-  <div class="wrap__calculator" id="js-calculator">
+  <div class="wrap__calculator">
     
     <textarea class="input__data input__data__process" id="js-process" placeholder="0" readonly ></textarea>
     <input class="input__data input__data__result" id="js-result" type="text" placeholder="0" readonly>
@@ -22,10 +22,9 @@
   
   </div> <!-- //end .wrap__calculator -->
 
-  <script src="./resources/js/drawKeypad.js?date=20200617"></script>
+  <!-- <script src="./resources/js/drawKeypad.js?date=20200617"></script>
   <script src="./resources/js/stack.js?date=20200617"></script>
-  <script src="./resources/js/calculator.js?date=20200617">
-    
-  </script>
+  <script src="./resources/js/calculator.js?date=20200617"></script> -->
+  <script type="module" src="./app.js"></script>
 </body>
 </html>

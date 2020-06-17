@@ -1,0 +1,41 @@
+Arguments: 
+  /Users/j/.nvm/versions/node/v13.10.1/bin/node /Users/j/.nvm/versions/node/v13.10.1/bin/yarn start
+
+PATH: 
+  /Users/j/.nvm/versions/node/v13.10.1/bin:/usr/local/opt/php@7.2/sbin:/usr/local/opt/php@7.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Users/j/.nvm/versions/node/v13.10.1/bin:/usr/local/opt/php@7.2/sbin:/usr/local/opt/php@7.2/bin:/Users/j/.composer/vendor/bin:/Users/j/.composer/vendor/bin
+
+Yarn version: 
+  1.22.0
+
+Node version: 
+  13.10.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/j/Documents/dev/workSpace/J/js-calculator/package.json: Unexpected token } in JSON at position 270
+      at JSON.parse (<anonymous>)
+      at /Users/j/.nvm/versions/node/v13.10.1/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/j/.nvm/versions/node/v13.10.1/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /Users/j/.nvm/versions/node/v13.10.1/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "js-calculator",
+    "version": "1.0.0",
+    "main": "server.js",
+    "repository": "https://github.com/world-one/javascript-calculator.git",
+    "author": "world-one <worldone85@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+      "start" : "node.js ./server.js",
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
