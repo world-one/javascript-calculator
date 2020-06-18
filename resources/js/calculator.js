@@ -1,5 +1,5 @@
 // by ES2015
-import Stack from './stack.js';
+import Stack from './stack.js?v=20200617';
 class Calculator{
   
   TYPE_NUMBER = 'number';
