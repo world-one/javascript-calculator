@@ -1,5 +1,4 @@
 // by ES2015
-
 import Stack from './stack.js';
 class Calculator{
   

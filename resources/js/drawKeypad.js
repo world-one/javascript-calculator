@@ -1,4 +1,3 @@
-
 class DrawKeypad{
   constructor(){
     this.draw();
