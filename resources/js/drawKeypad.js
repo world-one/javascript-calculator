@@ -27,7 +27,7 @@ class DrawKeypad{
   createEl( tag, text, type, value, parentEl, className = 'keypad__number' ){
     const btn = document.createElement(tag);
     btn.type = "button";
-    btn.append(document.createTextNode(text));
+    btn.append( document.createTextNode(text));
     btn.setAttribute( 'data-keypad-type', type );
     btn.setAttribute( 'data-value', value );
     btn.classList.add( 'keypad__btn', className );

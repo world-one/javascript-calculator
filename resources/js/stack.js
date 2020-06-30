@@ -9,7 +9,7 @@ class Stack{
   push(el){
     this.store.push(el);
   }
-  pop(){
+  pop() {
     return this.store.pop();
   }
 };
